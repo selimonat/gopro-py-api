@@ -9,4 +9,5 @@ gpCam = GoProCamera.GoPro(constants.auth);
 gpCam.take_photo(1)
 time.sleep(2)
 gpCam.downloadLastMedia()
+print(os.getcwd())
 subprocess.Popen(["/home/pi/code/shell/bin/SendLastPic.sh",os.getcwd(), "onatselim@gmail.com"])
