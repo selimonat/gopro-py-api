@@ -632,7 +632,7 @@ class GoPro:
 				f = filename[:4] + str(int(lower_bound) + i) + ".JPG"
 				self.downloadMedia(folder, f)
 	def downloadLastMedia(self, path="", custom_filename="", GPR=False):
-		if self.IsRecording() == 0:
+		#if self.IsRecording() == 0:
 			if path == "":
 				if GPR == True:
 					if path.endswith("JPG"):
@@ -640,6 +640,8 @@ class GoPro:
 					else:
 						print("Media is not a JPG.")
 				print("filename: " + self.getMediaInfo("file") + "\nsize: " + self.getMediaInfo("size"))
+				print(self.getMedia())
+				print(self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
 				urllib.request.urlretrieve(self.getMedia(), self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
 			else:
 				if GPR == True:
@@ -657,8 +659,8 @@ class GoPro:
 				else:
 					filename = custom_filename
 				urllib.request.urlretrieve(path, filename)
-		else:
-			print("Not supported while recording or processing media.")
+		#else:
+		#	print("Not supported while recording or processing media.")
 	def downloadMedia(self, folder, file, custom_filename=""):
 		if self.IsRecording() == 0:
 			print("filename: " + file)
