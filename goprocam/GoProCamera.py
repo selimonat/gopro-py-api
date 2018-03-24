@@ -642,7 +642,7 @@ class GoPro:
 				print("filename: " + self.getMediaInfo("file") + "\nsize: " + self.getMediaInfo("size"))
 				print(self.getMedia())
 				print(self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
-				urllib.request.urlretrieve(self.getMedia(), self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
+				urllib.request.urlretrieve(self.getMedia(), custom_filename+self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
 			else:
 				if GPR == True:
 					if path.endswith("JPG"):

@@ -8,6 +8,6 @@ import os
 gpCam = GoProCamera.GoPro(constants.auth);
 gpCam.take_photo(1)
 time.sleep(2)
-gpCam.downloadLastMedia(custom_filename="/home/pi/photos/bla.jpg")
-#print(os.getcwd())
-#subprocess.Popen(["/home/pi/code/shell/bin/SendLastPic.sh",os.getcwd(), "onatselim@gmail.com"])
+gpCam.downloadLastMedia(custom_filename="/home/pi/photos/")
+print(os.getcwd())
+subprocess.Popen(["/home/pi/code/shell/bin/SendLastPic.sh",os.getcwd(), "onatselim@gmail.com"])
