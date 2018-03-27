@@ -639,10 +639,14 @@ class GoPro:
 						urllib.request.urlretrieve(self.getMedia().replace("JPG","GPR"), self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
 					else:
 						print("Media is not a JPG.")
-				print("filename: " + self.getMediaInfo("file") + "\nsize: " + self.getMediaInfo("size"))
-				print(self.getMedia())
-				print(self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
-				urllib.request.urlretrieve(self.getMedia(), custom_filename+self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
+				#print("filename: " + self.getMediaInfo("file") + "\nsize: " + self.getMediaInfo("size"))
+				#print(self.getMedia())
+				#print(self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
+				#print(1)
+				#print(custom_filename)
+				urllib.request.urlretrieve(self.getMedia(), custom_filename)
+                #the line below has to be saved somehow, e.g. when custom_filename is empty that one below should be executed
+				#urllib.request.urlretrieve(self.getMedia(), custom_filename+self.getMediaInfo("folder")+"-"+self.getMediaInfo("file"))
 			else:
 				if GPR == True:
 					if path.endswith("JPG"):
